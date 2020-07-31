@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+	<div class="">
+		<h2>
+			Nos meilleures ventes:
+		</h2>
+
+		<ul>
+
+			<h3>Top 5 des chaussons</h3>
+
+			<div class=" d-flex flex-row-reverse ">
+				{% for article in topfivechausson %}
+					<div class="article">
+						<li class="puce">
+							<span class="title">{{ article.name }}</span>
+							<span class="tagicon {{ article.sexe}}">{{ article.sexe}}</span>
+						</li>
+						<li class="puce"><div class=""><img src="{{ asset('/chausson/') ~ article.image}}"</div></li>
+						<li class="puce"> {{ article.marque.name}}</li>
+						<li class="puce">{{ article.description|striptags|slice(0, 300)|raw }}</li>
+						<li class="puce">Prix {{ article.prix}}€</li>
+						<li class="puce">Acheteurs convaincus:
+							{{ article.NbrVente}}</li>
+						<li class="puce"><a href="{{ path('chausson_read', {'id': article.id}) }}">Voir le produit</a></li>	
+					</div>
+				{% endfor %}
+			</div>
+		</ul>
+
+		<ul>
+
+			<h3>Top 5 des chaussures</h3>
+
+			<div class=" d-flex justify-content-start flex-row-reverse">
+				{% for article in topfivechaussure %}
+					<div class="article">
+						<li class="puce">
+							<span class="title">{{ article.name }}</span>
+							<span class="tagicon {{ article.sexe}}">{{ article.sexe}}</span>
+						</li>
+						<li class="puce"><div class=""><img src="{{ asset('/chaussure/') ~ article.image}}"</div></li>
+						<li class="puce"> {{ article.marque.name}}</li>
+						<li class="puce">{{ article.description|striptags|slice(0, 300)|raw }}</li>
+						<li class="puce">Prix {{ article.prix}}€</li>
+						<li class="puce">Acheteurs convaincus:
+							{{ article.NbrVente}}</li>
+							<li class="puce"><a href="{{ path('chaussure_read', {'id': article.id}) }}">Voir le produit</a></li>
+					</div>
+				{% endfor %}
+			</div>
+		</ul>
+	</div>
+{% endblock %}

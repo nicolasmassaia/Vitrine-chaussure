@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+	<div class="">
+
+
+		<h2>{{allProductChaussure.marque.name}}
+		</h2>
+
+		<div>
+			{% for product in allProductChaussure %}
+
+				<ul>
+					<li>{{ product.name}}
+					</li>
+					<li>
+						<a href="{{ path('chaussure_read', {'id': product.id}) }}">{{ product.name }}</a>
+					</li>
+				</ul>
+
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
