@@ -13,7 +13,7 @@
 
 			<h3>Top 5 des chaussons</h3>
 
-			<div class=" d-flex flex-row-reverse ">
+			<div class=" d-flex flex-row ">
 				{% for article in topfivechausson %}
 					<div class="article">
 						<li class="puce">
@@ -21,7 +21,7 @@
 							<span class="tagicon {{ article.sexe}}">{{ article.sexe}}</span>
 						</li>
 						<li class="puce"><div class=""><img src="{{ asset('/chausson/') ~ article.image}}"</div></li>
-						<li class="puce"> {{ article.marque.name}}</li>
+						<li class="puce marque-name"> {{ article.marque.name}}</li>
 						<li class="puce">{{ article.description|striptags|slice(0, 300)|raw }}</li>
 						<li class="puce">Prix {{ article.prix}}€</li>
 						<li class="puce">Acheteurs convaincus:
@@ -36,7 +36,7 @@
 
 			<h3>Top 5 des chaussures</h3>
 
-			<div class=" d-flex justify-content-start flex-row-reverse">
+			<div class=" d-flex justify-content-start flex-row">
 				{% for article in topfivechaussure %}
 					<div class="article">
 						<li class="puce">
@@ -44,7 +44,7 @@
 							<span class="tagicon {{ article.sexe}}">{{ article.sexe}}</span>
 						</li>
 						<li class="puce"><div class=""><img src="{{ asset('/chaussure/') ~ article.image}}"</div></li>
-						<li class="puce"> {{ article.marque.name}}</li>
+						<li class="puce" "marque-name"> {{ article.marque.name}}</li>
 						<li class="puce">{{ article.description|striptags|slice(0, 300)|raw }}</li>
 						<li class="puce">Prix {{ article.prix}}€</li>
 						<li class="puce">Acheteurs convaincus:

@@ -35,3 +35,18 @@
 
     background-color:blue;
 }
+
+.marque-card {
+    margin: 5px;
+}
+
+.marque-name{
+
+    font-size: 1.2em;
+    font-family: 'Martel', serif;
+}
+
+.title{
+    font-size: 1.4em;
+    font-family: 'Martel', serif;
+}    

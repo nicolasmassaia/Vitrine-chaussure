@@ -26,7 +26,7 @@ class ChaussonRepository extends ServiceEntityRepository
     public function findtopfivechausson()
     {
         return $this->createQueryBuilder('c')
-        ->orderBy('c.nbr_vente')
+        ->orderBy('c.nbr_vente', 'DESC')
         ->setMaxResults(5)
         ->getQuery()
         ->getResult();

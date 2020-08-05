@@ -4,15 +4,22 @@
 {% endblock %}
 
 {% block body %}
-	<div>
+	<div class="">
 		<h2>
 			Nos marques:</h2>
-
+		<div class="d-flex">
 		{% for marque in allmarque %}
 
-			<ul>
-				<li><a href="{{ path('marque_read', {'id': marque.id}) }}">{{ marque.name }}</a></li>
-			</ul>
+
+			<div class="card bg-light mb-3 marque-card" style="width: 18rem;">
+				<img class="card-img-top" src="{{ asset('/marque/') ~ marque.image}}" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">{{ marque.name }}</h5>
+
+					<a href="{{ path('marque_read', {'id': marque.id} ) }}" class="btn btn-primary">Voir</a>
+				</div>
+			</div>
+
 
 		{% endfor %}
 	</div>
